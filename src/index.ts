@@ -5,9 +5,7 @@
 // we pass to our populateUser function, so that we can be aware of
 // errors in our user objects in the future.
 
-const reviewTotalDisplay = document.querySelector('#reviews')
-const returningUserDisplay = document.querySelector('#returning-user')
-const userNameDisplay = document.querySelector('#user')
+import { showReviewTotal, populateUser } from "./functions.js"
 
 const reviews = [
     {
@@ -30,25 +28,11 @@ const reviews = [
     },
 ]
 
-
-function showReviewTotal (value : number, reviewer : string, isloyalty : boolean) {
-    const loyaltyDisplay = isloyalty ? ' ⭐ ' : ''
-    reviewTotalDisplay!.innerHTML = 'review total ' + value.toString() + '| last reviewed by ' + reviewer + loyaltyDisplay
-}
-
-showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
-
 const you = {
     userName: 'Bobby',
     isReturning: true,
 }
 
-
-function populateUser(isReturning : boolean, userName : string ) {
-    if (isReturning){
-        returningUserDisplay!.innerHTML = 'back'
-    }
-    userNameDisplay!.innerHTML = userName
-}
-
+//Functions
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 populateUser(you.isReturning, you.userName)
