@@ -1,4 +1,5 @@
 # Ignores compiled TypeScript files
-**/wwwroot/app/**/*.map
-**/wwwroot/app/**/*.js
+functions.js
+index.js
+tsconfig.js
 
